@@ -18,23 +18,21 @@ var $search = $("#filter");
 			}
 			console.log(data);
 			console.log(concertEvents);
-			RenderEvent();
-
-		    //console.log(concertEvents[5].name)  
+			Display();
 	  }
 	});
 
-function RenderEvent(){
-	var strResult = "";
+function Display(){
+	var Results = "";
 	for (let i = 0; i<concertEvents.length; i++) {
-	 		strResult += "<div id='event_tap'><img src='" + concertEvents[i].imageSrc + 
+	 		Results += "<div id='event_tap'><img src='" + concertEvents[i].imageSrc + 
 	 		"' data-tags =" +concertEvents[i].name+"><div id='event_info'> <b>Nafn:</b> " + concertEvents[i].name + "<br> <b>Staðsetning:</b> " 
 	 		+ concertEvents[i].where + "<br> <b>Tími:</b> " + concertEvents[i].when + "</div></div>";
 	 }
-	 $("#event_list").html(strResult)
+	 $("#event_list").html(Results)
 }
 
-/*(function()
+(function()
 {
 var $events = $('event_tap img');
 var tagged = {};
@@ -48,9 +46,9 @@ var tagged = {};
 });
 
 
-});*/
+});
 
-
+/*
 
 var $events = $('event_tap img');
 var $search = $('#filter');
@@ -63,7 +61,7 @@ $('#filter').keyup(function(){
     } else {
         $('#event_tap > img').each(function(){
             var text = $(this).text().toLowerCase();
-            (text.indexOf(valThis) <= -1) ? $(this).show() : $(this).hide();
+            (text.indexOf(valThis)  -1) ? $(this).show() : $(this).hide();
         });
    };
-});
+});*/
